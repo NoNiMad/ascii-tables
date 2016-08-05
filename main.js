@@ -17,7 +17,7 @@ $('#settings input[name="fillWidth"]').on('change', function(e) {
     timerId = setTimeout(regen, 1000);
 });
 
-String.prototype.replaceAt=function(index, char) {
+String.prototype.replaceAt = function(index, char) {
     return this.substr(0, index) + char + this.substr(index + char.length);
 }
 
@@ -169,7 +169,12 @@ function generate(data) {
         for(let j = 0; j < row.height; j++) {
             let s = "";
             for(let k in row.data) {
-                s += textLine(row.data[k].data[j] || "", row.data[k].len).substr(k > 0 ? 1 : 0);
+                if(row.data[k].data[j] === "--")
+                    s += textLine(repeat("-", row.data[k].len), row.data[k].len).substr(k > 0 ? 1 : 0);
+                    // ou pour pas avoir les espaces sur les bords
+                    // s += (skin.vertChar + repeat("-", row.data[k].len + 2) + skin.vertChar).substr(k > 0 ? 1 : 0);
+                else
+                    s += textLine(row.data[k].data[j] || "", row.data[k].len).substr(k > 0 ? 1 : 0);
             }
             gen.push(s);
         }
