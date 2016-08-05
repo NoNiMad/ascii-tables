@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ASCII Data</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <section id="content">
+        <h2>Text To ASCII Tables</h2>
+        <p>
+            Cette petite application vous permet de convertir du texte quelque peu formatté en un tableau fait en ASCII Art.
+            Plusieurs paramètres sont actuellement disponibles dans le code (skins notamment) et viendront s'ajouter à l'interface prochainement.<br/>
+            Merci de signaler les bugs à <a href="http://twitter.com/NoNiMad">@NoNiMad</a>.
+            <br/><br/>
+            Pour créer une nouvelle colonne, utilisez le symbole <strong>"|"</strong>.<br/>
+            Pour créer une nouvelle ligne, utilisez le symbole <strong>"-"</strong>.
+            <br/><br/>
+            Afin de vous aider à comprendre le fonctionnement, un exemple est présent
+            sous forme d'une fiche de personnage de JDR (Jeu De Rôle) :
+        </p>
+        <div id="settings">
+            <h3>Options</h3>
+            <label for="fillWidth">Prendre toute la largeur disponible</label> : <input type="checkbox" name="fillWidth" checked/>
+        </div>
+        <div id="textAreas">
+            <textarea id="editArea">Race :
+|
+Nom :
+-
+Métier principal :
+-
+Force
+Dextérité
+Consitution
+Intelligence
+Sagesse
+Charisme
+|
+0
+0
+0
+0
+0
+0
+|
+Pour taper
+Esquiver / Arts martiaux
+Points de vie
+Logique / Mémoire / Apprentissage
+Perception
+BAH LE CHARISME WESH
+-
+Métier secondaire n°1 :
+Métier secondaire n°2 :
+-
+PV :
+PO :
+|
+Armure   :
+Arme CAC :</textarea><textarea id="genArea" readonly></textarea>
+    </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+
+</html>
